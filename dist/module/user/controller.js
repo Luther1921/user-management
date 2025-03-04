@@ -26,9 +26,9 @@ const registerUser = (req, res, next) => __awaiter(void 0, void 0, void 0, funct
 exports.registerUser = registerUser;
 const fetchUsers = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const page = parseInt(req.query.page) || 1;
+        const pageNumber = parseInt(req.query.pageNumber) || 1;
         const pageSize = parseInt(req.query.pageSize) || 10;
-        const users = yield (0, service_1.getUsers)(page, pageSize);
+        const users = yield (0, service_1.getUsers)(pageNumber, pageSize);
         res.status(users.statusCode).json(users);
     }
     catch (error) {

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.validatePost = exports.validateAddress = exports.validateUser = void 0;
+exports.validatePost = exports.validateUpdateAddress = exports.validateAddress = exports.validateUser = void 0;
 const Validator = require("fastest-validator");
 const validate = new Validator();
 //user registration
@@ -19,6 +19,13 @@ const addressSchema = {
     userId: { type: "number" },
 };
 exports.validateAddress = validate.compile(addressSchema);
+const updateAddressSchema = {
+    city: { type: "string", min: 2, max: 100, optional: true },
+    street: { type: "string", min: 3, max: 255, optional: true },
+    country: { type: "string", min: 2, max: 100, optional: true },
+    userId: { type: "number", optional: true },
+};
+exports.validateUpdateAddress = validate.compile(updateAddressSchema);
 // post
 const postSchema = {
     title: { type: "string", min: 5, max: 100 },

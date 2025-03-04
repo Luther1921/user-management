@@ -51,9 +51,9 @@ const saveUser = (userPayload) => __awaiter(void 0, void 0, void 0, function* ()
     }
 });
 exports.saveUser = saveUser;
-const getUsers = (...args_1) => __awaiter(void 0, [...args_1], void 0, function* (page = 1, pageSize = 10) {
+const getUsers = (...args_1) => __awaiter(void 0, [...args_1], void 0, function* (pageNumber = 1, pageSize = 10) {
     try {
-        const skip = (page - 1) * pageSize;
+        const skip = (pageNumber - 1) * pageSize;
         // Fetch users with pagination
         const users = yield prisma.user.findMany({
             skip,

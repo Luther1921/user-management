@@ -7,5 +7,5 @@ const validation_1 = require("../../utils/validation");
 const router = (0, express_1.Router)();
 router.post("/", (0, validator_1.validator)(validation_1.validateAddress), controller_1.addAddress);
 router.get("/:userId", controller_1.fetchAddress);
-router.patch("/:userId", (0, validator_1.validator)(validation_1.validateAddress), controller_1.modifyAddress);
+router.patch("/:userId", (0, validator_1.validator)(validation_1.validateUpdateAddress), controller_1.modifyAddress);
 exports.default = router;
