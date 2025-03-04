@@ -7,7 +7,11 @@
     "start": "npx ts-node src/index.ts",
     "dev": "npx nodemon src/index.ts",
     "start:prod": "node dist/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "migrate": "npx prisma migrate deploy"
+  },
+  "prisma": {
+    "schema": "prisma/schema.prisma"
   },
   "keywords": [],
   "author": "",
