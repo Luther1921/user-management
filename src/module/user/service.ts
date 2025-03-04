@@ -48,11 +48,11 @@ export const saveUser = async (
 };
 
 export const getUsers = async (
-  page: number = 1,
+  pageNumber: number = 1,
   pageSize: number = 10
 ): Promise<UserResponseProps> => {
   try {
-    const skip = (page - 1) * pageSize;
+    const skip = (pageNumber - 1) * pageSize;
 
     // Fetch users with pagination
     const users = await prisma.user.findMany({

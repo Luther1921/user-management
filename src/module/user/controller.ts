@@ -24,10 +24,10 @@ export const fetchUsers = async (
   next: NextFunction
 ) => {
   try {
-    const page = parseInt(req.query.page as string) || 1;
+    const pageNumber = parseInt(req.query.pageNumber as string) || 1;
     const pageSize = parseInt(req.query.pageSize as string) || 10;
 
-    const users = await getUsers(page, pageSize);
+    const users = await getUsers(pageNumber, pageSize);
 
     res.status(users.statusCode).json(users);
   } catch (error) {

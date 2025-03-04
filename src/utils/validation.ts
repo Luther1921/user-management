@@ -23,6 +23,14 @@ const addressSchema = {
 
 export const validateAddress = validate.compile(addressSchema);
 
+const updateAddressSchema = {
+  city: { type: "string", min: 2, max: 100, optional: true },
+  street: { type: "string", min: 3, max: 255, optional: true },
+  country: { type: "string", min: 2, max: 100, optional: true },
+  userId: { type: "number", optional: true },
+};
+
+export const validateUpdateAddress = validate.compile(updateAddressSchema);
 // post
 
 const postSchema = {
